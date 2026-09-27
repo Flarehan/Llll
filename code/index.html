@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div id="particles"></div>
+
+  <main class="page">
+    <section class="hero card reveal">
+      <div class="tiny-label">Tatlım dasha seni cok seviyorum</div>
+      <h1>Hey, cutie girl.</h1>
+      <p class="hero-text">
+        I know today feels a little heavier than usual.
+        I can't magically fix everything from far away,
+        but maybe I can steal a small smile from you.
+      </p>
+      <button class="primary-btn" onclick="scrollToSection('mood')">
+        Come here for a second ♡
+      </button>
+    </section>
+
+    <section id="mood" class="card reveal">
+      <div class="section-heading">
+        <span>01</span>
+        <div>
+          <h2>Tell me what you need.</h2>
+          <p>You don't have to explain anything. Just pick one.</p>
+        </div>
+      </div>
+
+      <div class="mood-grid">
+        <button class="mood-btn" data-mood="sad">😔 I'm sad</button>
+        <button class="mood-btn" data-mood="miss">🥺 I miss you</button>
+        <button class="mood-btn" data-mood="tired">😴 I'm exhausted</button>
+        <button class="mood-btn" data-mood="love">❤️ I need some love</button>
+        <button class="mood-btn wide" data-mood="laugh">😂 Make me smile</button>
+      </div>
+
+      <div id="moodMessage" class="message-box hidden"></div>
+    </section>
+
+    <section class="card reveal hug-section">
+      <div class="section-heading">
+        <span>02</span>
+        <div>
+          <h2>Long-distance hug machine.</h2>
+          <p>Highly advanced technology. Definitely real.</p>
+        </div>
+      </div>
+
+      <button id="hugBtn" class="secondary-btn">Send me a hug 🫂</button>
+
+      <div id="ddnetHugScene" class="ddnet-hug-scene" aria-hidden="true">
+        <div class="skin-runner skin-runner-left" id="blueRunner">
+          <img src="blue_skin.png" alt="">
+        </div>
+
+        <div class="hug-heart" id="hugHeart">♥</div>
+
+        <div class="skin-runner skin-runner-right" id="pinkRunner">
+          <img src="pink_skin.png" alt="">
+        </div>
+      </div>
+
+      <div id="hugArea" class="hug-area hidden">
+        <div class="hug-status">
+          <span id="hugStatus">Preparing hug...</span>
+          <span id="hugPercent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="hugProgress" class="progress-bar"></div>
+        </div>
+        <p id="hugResult" class="hug-result"></p>
+      </div>
+    </section>
+
+    <section class="card reveal">
+      <div class="section-heading">
+        <span>03</span>
+        <div>
+          <h2>One thing I adore about you.</h2>
+          <p>Press it whenever your brain is being unfair to you.</p>
+        </div>
+      </div>
+
+      <div class="compliment-box">
+        <p id="complimentText">
+          You deserve to hear nice things about yourself — especially on bad days.
+        </p>
+        <button id="complimentBtn" class="secondary-btn">Tell me one ♡</button>
+      </div>
+
+      
+    </section>
+
+    <section class="card reveal distance-card">
+      <div class="section-heading">
+        <span>04</span>
+        <div>
+          <h2>The annoying part.</h2>
+          <p>There are way too many kilometers between us.</p>
+        </div>
+      </div>
+
+      <div class="distance-line">
+        <div class="person">
+          <span class="person-icon">☾</span>
+          <small>You</small>
+        </div>
+
+        <div class="line-wrap">
+          <div class="line"></div>
+          <div class="moving-heart">♥</div>
+        </div>
+
+        <div class="person">
+          <span class="person-icon">☀</span>
+          <small>Me</small>
+        </div>
+      </div>
+
+      <p class="distance-quote">
+        Distance: way too much.<br>
+        How much I care about you: inconveniently impossible to measure.
+      </p>
+    </section>
+
+    <section class="card reveal">
+      <div class="section-heading">
+        <span>05</span>
+        <div>
+          <h2>Open when...</h2>
+          <p>Little letters for different versions of you.</p>
+        </div>
+      </div>
+
+      <div class="letters-grid">
+        <button class="letter-card" data-letter="alone">
+          <span>✉</span>
+          <strong>you feel alone</strong>
+          <small>open me</small>
+        </button>
+
+        <button class="letter-card" data-letter="doubt">
+          <span>✉</span>
+          <strong>you doubt yourself</strong>
+          <small>open me</small>
+        </button>
+
+        <button class="letter-card" data-letter="miss">
+          <span>✉</span>
+          <strong>you miss me</strong>
+          <small>open me</small>
+        </button>
+
+        <button class="letter-card" data-letter="sleep">
+          <span>✉</span>
+          <strong>you can't sleep</strong>
+          <small>open me</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="card emergency-card reveal">
+      <div class="section-heading">
+        <span>06</span>
+        <div>
+          <h2>Emergency button.</h2>
+          <p>For very serious cases of "I feel terrible."</p>
+        </div>
+      </div>
+
+      <button id="emergencyBtn" class="emergency-btn">
+        VERY BAD DAY BUTTON
+      </button>
+
+      <p id="emergencyText" class="emergency-text">
+        Only press in case of emotional emergency.
+      </p>
+    </section>
+
+    <section class="final-section reveal">
+      <p class="final-small">one last thing</p>
+      <h2>
+        This website can't fix your whole day.<br>
+        And I can't always be right next to you.
+      </h2>
+      <p>
+        But if this made you feel even a tiny bit less alone,
+        then it did exactly what I wanted it to do.
+      </p>
+      <p class="signature">
+        I'm here. Always closer than the distance makes it seem. ♡
+      </p>
+      <button id="finalHugBtn" class="primary-btn">One more hug 🫂</button>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" aria-label="Close">×</button>
+      <div class="modal-envelope">♡</div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
